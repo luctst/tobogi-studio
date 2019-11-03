@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/luctst/tobogi-studio.svg?branch=master)](https://travis-ci.com/luctst/tobogi-studio)
+
 # Tobogi-studio
 Follow the instructions to interact with the project.
 
