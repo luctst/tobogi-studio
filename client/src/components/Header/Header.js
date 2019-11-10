@@ -12,12 +12,22 @@ function Header (props) {
         })
     }, []);
 
+    const handleClick = e => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        props.dispatch({
+            type: "SHOW_SIDEBAR",
+            payload: !props.showSidebar
+        });
+    }
+
     return (
-        <HeaderSC>
+        <HeaderSC as="header" windowWidth={windowWidth} sidebarIsTrue={props.showSidebar}>
             <h1>TOBOGI</h1>
             <nav>
                 <ul>
-                    <li onClick={() => props.dispatch({ type: 'SHOW_SIDEBAR', payload: !props.showSidebar})}><NavLink to="">INFO</NavLink></li>
+                    <li onClick={handleClick}><NavLink to="">INFO</NavLink></li>
                     {
                         windowWidth >= 700 ?
                             <>
