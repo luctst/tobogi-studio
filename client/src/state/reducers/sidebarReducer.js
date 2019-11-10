@@ -1,14 +1,16 @@
 import appstate from "./../state";
 
 function sidebarReducer (state = appstate, action) {
-    if (action.type === "SHOW_SIDEBAR") {
-        const newState = {...state};
+    switch (action.type) {
+        case "SHOW_SIDEBAR": {
+            const newState = { ...state };
 
-        newState.showSidebar = action.payload;
-        return newState;
+            newState.showSidebar = action.payload;
+            return newState;
+        }
+        default:
+            return state;
     }
-    
-    return state;
 }
 
 export default sidebarReducer;
