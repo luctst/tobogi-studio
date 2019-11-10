@@ -1,12 +1,14 @@
 import styled from 'styled-components';
+import Container from './../../styles/Container';
 import helper from './../../styles/helper';
 
-const HeaderSC = styled.header`
+const HeaderSC = styled(Container)`
     align-items: center;
     display: flex;
     height: 10vh;
     justify-content: space-between;
-
+    ${props => (props.windowWidth >= 560 && props.sidebarIsTrue) && "margin: 0"}
+    
     h1 {
         font-weight: 900;
         margin: 0;
