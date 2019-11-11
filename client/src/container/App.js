@@ -3,17 +3,20 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import {Provider} from "react-redux";
 import store from "./../state/store";
 import Header from './../components/Header/Header';
-import SidebarHandler from './SidebarHandler/Sidebar';
+import ProjectsHandler from "./ProjectsHandler/ProjectsHandler";
+const SidebarHandler = React.lazy(() => import('./SidebarHandler/Sidebar'));
 
 function App() {
   return (
-    <BrowserRouter forceRefresh={false}>
+    <BrowserRouter forcçeRefresh={false}>
       <Provider store={store}>
         <Header/>
         <Switch>
-          <Route exact strict path="/" render={() => null}/>
+          <Route exact strict path="/" component={ProjectsHandler}/>
         </Switch>
-        <SidebarHandler/>
+        <React.Suspense fallback={<p>Chargement...</p>}>
+          <SidebarHandler/>
+        </React.Suspense>
       </Provider>
     </BrowserRouter>
   );
