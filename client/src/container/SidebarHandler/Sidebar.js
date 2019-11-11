@@ -4,7 +4,7 @@ import Sidebar from "./../../components/Sidebar/Sidebar";
 import {connect} from 'react-redux';
 
 function SidebarHandler (props) {
-    const mainRoot = document.querySelector("#root");
+    const mainRoot = document.querySelector("body");
 
     if (props.showSidebar) {
         const createModal = document.createElement("section");
@@ -12,6 +12,7 @@ function SidebarHandler (props) {
         if (window.innerWidth >= 560) mainRoot.style = "display: grid;grid-template-columns: 2.5fr 1fr;";
 
         createModal.id = "modal";
+        createModal.style = "grid-column: 2 / 3; grid-row: 1 / -1";
         mainRoot.appendChild(createModal);
 
         return ReactDOM.createPortal(
