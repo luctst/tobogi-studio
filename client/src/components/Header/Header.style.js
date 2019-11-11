@@ -8,6 +8,7 @@ const HeaderSC = styled(Container)`
     height: 10vh;
     justify-content: space-between;
     ${props => (props.windowWidth >= 560 && props.sidebarIsTrue) && "margin: 0"}
+    ${props => props.sidebarIsTrue && "grid-column: 1 / 2"}
     
     h1 {
         font-weight: 900;
