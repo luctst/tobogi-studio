@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "projects",
+  "info": {
+    "name": "projects",
+    "description": "Projects made by tobogi"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "unique": true,
+      "required": true,
+      "type": "string"
+    },
+    "description": {
+      "maxLength": 80,
+      "required": true,
+      "unique": true,
+      "type": "text"
+    },
+    "caption": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}
