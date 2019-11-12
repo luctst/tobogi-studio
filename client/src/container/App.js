@@ -8,7 +8,7 @@ const SidebarHandler = React.lazy(() => import('./SidebarHandler/Sidebar'));
 
 function App() {
   return (
-    <BrowserRouter forcçeRefresh={false}>
+    <BrowserRouter forceRefresh={false}>
       <Provider store={store}>
         <Header/>
         <Switch>

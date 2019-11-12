@@ -1,15 +1,16 @@
 import React from "react";
 import ProjectSC from "./Project.style";
 
-function Project ({projectData}) {
+function Project (props) {
     return (
         <ProjectSC as="section">
             <div>
-                <img src={`http://localhost:1337${projectData.caption[0].url}`} />
+                <img src={`http://localhost:1337${props.projectData.caption[0].url}`} />
             </div>
             <footer>
-                <p>{projectData.name} - {projectData.description}</p>
+                <p>{props.projectData.name} - {props.projectData.description}</p>
                 <button>Voir plus</button>
+                { props.countProjects && <p>{props.projectData.id}/{props.countProjects}</p> }
             </footer>
         </ProjectSC>
     );

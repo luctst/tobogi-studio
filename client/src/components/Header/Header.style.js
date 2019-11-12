@@ -8,7 +8,7 @@ const HeaderSC = styled(Container)`
     height: 10vh;
     justify-content: space-between;
     ${props => (props.windowWidth >= 560 && props.sidebarIsTrue) && "margin: 0"}
-    ${props => props.sidebarIsTrue && "grid-column: 1 / 2"}
+    ${props => props.sidebarIsTrue && "grid-column: 1 / 2; grid-row: 1 / 1;"}
     
     h1 {
         font-weight: 900;
@@ -32,15 +32,21 @@ const HeaderSC = styled(Container)`
                 a {
                     text-decoration: none;
                     color: ${helper.mainColor};
-                    font-size: 17px;
+                    font-size: 15px;
                 }
             }
         }
     }
 
+    @media screen and (min-width: 501px) {
+        h1 {
+            font-size: 25px;
+        }
+    }
+
     @media screen and (max-width: 500px) {
         h1 {
-            font-size: 1.8em;
+            font-size: 20px;
         }
     }
 `;

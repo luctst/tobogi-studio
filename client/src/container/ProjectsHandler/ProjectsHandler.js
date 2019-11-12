@@ -22,12 +22,14 @@ function ProjectsHandler () {
     }, []);
 
     return (
-        <main>
+        <main style={{gridColumn: "1 / 2", gridRow: "1 / -1"}}>
             {
                 (function () {
                     if (!state.dataFetched) return <SCLoader/>
 
                     if (state.windowWidth <= 570) return state.data.map((project, index) => <Project projectData={project} key={index}/>);
+
+                    return <Project projectData={state.data[0]} countProjects={state.data.length}/>
                 })()
             }
         </main>

@@ -7,14 +7,18 @@ function Header (props) {
     const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
     React.useEffect(() => {
-        window.addEventListener("resize", function (e) {
-            setWindowWidth(e.target.innerWidth)
-        })
+        window.addEventListener("resize", e => {
+            if (windowWidth >= 700 && e.target.innerWidth >= 700) return null;
+            if (windowWidth <= 700 && e.target.innerWidth <= 700) return null;
+
+            if (windowWidth >= 700 && e.target.innerWidth <= 700) setWindowWidth(e.target.innerWidth);
+            if (windowWidth <= 700 && e.target.innerWidth >= 700) setWindowWidth(e.target.innerWidth);
+
+        }, false);
     }, []);
 
     const handleClick = e => {
-        e.preventDefault();
-        e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
 
         props.dispatch({
             type: "SHOW_SIDEBAR",
