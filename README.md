@@ -13,7 +13,7 @@ Run the following command line:
 ```
 cd api/
 npm install
-npm develop
+npm run develop
 ```
 
 ## Start the front-end
