@@ -20,7 +20,7 @@ function ProjectsHandler () {
             newState.data = projects;
             setState(newState);
         })()
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <main style={{gridColumn: "1 / 2", gridRow: "1 / -1"}}>
