@@ -3,7 +3,7 @@ import SidebarSC from "./Sidebar.style";
 import {connect} from "react-redux";
 
 function SidebarHandler (props) {
-    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+    const [windowWidth] = React.useState(window.innerWidth);
 
     const handleClick = e => {
         e.stopPropagation();
