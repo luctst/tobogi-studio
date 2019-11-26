@@ -5,7 +5,7 @@ function Project (props) {
     return (
         <ProjectSC as="section">
             <div>
-                <img src={`http://localhost:1337${props.projectData.caption[0].url}`} />
+                <img src={`http://localhost:1337${props.projectData.captionMobile[0].url}`} alt={props.projectData.description}/>
             </div>
             <footer>
                 <p>{props.projectData.name} - {props.projectData.description}</p>
