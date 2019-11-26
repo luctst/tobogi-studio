@@ -2,6 +2,7 @@ import React from "react";
 import fetchData from "./../../utils/fetchData";
 import SCLoader from "../../components/Loader/Loader.style";
 import Project from "./../../components/Project/Project";
+import Slider from "../../components/Slider/Slider";
 
 function ProjectsHandler () {
     const [state, setState] = React.useState({
@@ -19,7 +20,7 @@ function ProjectsHandler () {
             newState.data = projects;
             setState(newState);
         })()
-    }, []);
+    }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <main style={{gridColumn: "1 / 2", gridRow: "1 / -1"}}>
@@ -29,7 +30,7 @@ function ProjectsHandler () {
 
                     if (state.windowWidth <= 570) return state.data.map((project, index) => <Project projectData={project} key={index}/>);
 
-                    return <Project projectData={state.data[0]} countProjects={state.data.length}/>
+                    return <Slider projectData={state.data}/>
                 })()
             }
         </main>
