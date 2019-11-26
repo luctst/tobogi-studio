@@ -8,13 +8,14 @@ function Header (props) {
 
     React.useEffect(() => {
         window.addEventListener("resize", e => {
-            if (windowWidth >= 700 && e.target.innerWidth >= 700) return null;
-            if (windowWidth <= 700 && e.target.innerWidth <= 700) return null;
+            setWindowWidth(e.target.innerWidth);
+            // if (windowWidth >= 700 && e.target.innerWidth >= 700) return null;
+            // if (windowWidth <= 700 && e.target.innerWidth <= 700) return null;
 
-            if (windowWidth >= 700 && e.target.innerWidth <= 700) setWindowWidth(e.target.innerWidth);
-            if (windowWidth <= 700 && e.target.innerWidth >= 700) setWindowWidth(e.target.innerWidth);
+            // if (windowWidth >= 700 && e.target.innerWidth <= 700) setWindowWidth(e.target.innerWidth);
+            // if (windowWidth <= 700 && e.target.innerWidth >= 700) setWindowWidth(e.target.innerWidth);
 
-        }, false);
+        });
     }, []);
 
     const handleClick = e => {
