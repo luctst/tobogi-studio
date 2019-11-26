@@ -1,0 +1,12 @@
+version: "3"
+services: 
+  api-container:
+    build:
+      context: ./api
+    ports:
+      - "1337:1337"
+  front-container:
+    build: 
+      context: ./client
+    ports: 
+      - "3000:3000"
