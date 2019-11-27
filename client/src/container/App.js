@@ -4,7 +4,7 @@ import {Provider} from "react-redux";
 import store from "./../state/store";
 import Header from './../components/Header/Header';
 import ProjectsHandler from "./ProjectsHandler/ProjectsHandler";
-const SidebarHandler = React.lazy(() => import('./SidebarHandler/Sidebar'));
+const SidebarHandler = React.lazy(() => import('./SidebarHandler/SidebarHandler'));
 
 function App() {
   return (
