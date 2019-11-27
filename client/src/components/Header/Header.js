@@ -4,11 +4,12 @@ import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 function Header (props) {
-    const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
-
     React.useEffect(() => {
-        window.addEventListener("resize", e => {
-            setWindowWidth(e.target.innerWidth);
+        window.addEventListener("resize", () => {
+            // TODO: Create an algo who only dispatch when necessary.
+            props.dispatch({
+                type: "UPDATE_WINDOW_WIDTH"
+            });
             // if (windowWidth >= 700 && e.target.innerWidth >= 700) return null;
             // if (windowWidth <= 700 && e.target.innerWidth <= 700) return null;
 
@@ -18,23 +19,16 @@ function Header (props) {
         });
     }, []);
 
-    const handleClick = e => {
-        e.nativeEvent.stopImmediatePropagation();
-
-        props.dispatch({
-            type: "SHOW_SIDEBAR",
-            payload: !props.showSidebar
-        });
-    }
+    const handleClick = () => props.dispatch({type: "SHOW_SIDEBAR", payload: !props.showSidebar});
 
     return (
-        <HeaderSC as="header" windowWidth={windowWidth} sidebarIsTrue={props.showSidebar}>
+        <HeaderSC as="header" windowWidth={props.windowWidth} sidebarIsTrue={props.showSidebar}>
             <h1>TOBOGI</h1>
             <nav>
                 <ul>
                     <li onClick={handleClick}><NavLink to="">INFO</NavLink></li>
                     {
-                        windowWidth >= 700 ?
+                        props.windowWidth >= 700 ?
                             <>
                                 <li className="is__link__middle"><NavLink to="">MAIL</NavLink></li>
                                 <li><NavLink to="">INSTAGRAM</NavLink></li>
@@ -47,8 +41,11 @@ function Header (props) {
     );
 }
 
-function mapState ({sidebarReducer}) {
-    return sidebarReducer;
+function mapState ({sidebarReducer, windowWidthReducer}) {
+    return {
+        ...sidebarReducer,
+        ...windowWidthReducer
+    }
 };
 
 export default connect(mapState)(Header);
