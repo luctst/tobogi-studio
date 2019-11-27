@@ -1,3 +1,4 @@
 export default {
-    showSidebar: false
+    showSidebar: false,
+    windowWidth: window.innerWidth
 }
