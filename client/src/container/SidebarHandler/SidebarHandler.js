@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Sidebar from "./../../components/Sidebar/Sidebar";
+import Sidebar from "../../components/Sidebar/Sidebar";
 import {connect} from 'react-redux';
 
 function SidebarHandler (props) {
