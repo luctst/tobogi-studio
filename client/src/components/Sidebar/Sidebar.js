@@ -3,8 +3,6 @@ import SidebarSC from "./Sidebar.style";
 import {connect} from "react-redux";
 
 function SidebarHandler (props) {
-    const [windowWidth] = React.useState(window.innerWidth);
-
     const handleClick = e => {
         e.stopPropagation();
 
@@ -15,17 +13,20 @@ function SidebarHandler (props) {
     }
 
     return (
-        <SidebarSC windowWidth={windowWidth}>
+        <SidebarSC windowWidth={props.windowWidth}>
             <header>
-                {windowWidth <= 450 && <h1>TOBOGI</h1>}
+                {props.windowWidth <= 450 && <h1>TOBOGI</h1>}
                 <span onClick={handleClick}>X</span>
             </header>
         </SidebarSC>
     );
 }
 
-function mapState ({sidebarReducer}) {
-    return sidebarReducer
+function mapState ({sidebarReducer, windowWidthReducer}) {
+    return {
+        ...sidebarReducer,
+        ...windowWidthReducer
+    }
 }
 
 export default connect(mapState)(SidebarHandler);
