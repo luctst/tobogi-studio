@@ -10,7 +10,7 @@ function Project (props) {
             <footer>
                 <p>{props.projectData.name} - {props.projectData.description}</p>
                 <button>Voir plus</button>
-                { props.countProjects && <p>{props.projectData.id}/{props.countProjects}</p> }
+                <p>{props.projectData.id}/{props.countProjects}</p>
             </footer>
         </ProjectSC>
     );
