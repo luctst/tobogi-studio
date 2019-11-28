@@ -23,7 +23,7 @@ function Header (props) {
 
     return (
         <HeaderSC as="header" windowWidth={props.windowWidth} sidebarIsTrue={props.showSidebar}>
-            <h1>TOBOGI</h1>
+            <h1>MODAL</h1>
             <nav>
                 <ul>
                     <li onClick={handleClick}><NavLink to="">INFO</NavLink></li>
