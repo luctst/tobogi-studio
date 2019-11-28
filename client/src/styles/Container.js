@@ -7,16 +7,23 @@ const Container = styled.section`
     padding:0 15px;
     margin:0 auto;
 
-    @media (min-width: 576px) {
-		max-width: 540px;
+	@media screen and (max-width: 576px) {
+		width: 100%;
 	}
-	@media (min-width: 768px) {
-		max-width: 720px;
+
+	@media screen and (min-width: 577px) {
+		width: 540px;
 	}
-	@media (min-width: 992px) {
-		max-width: 960px;
+
+	@media screen and (min-width: 768px) {
+		width: 720px;
 	}
-	@media (min-width: 1200px) {
+
+	@media screen and (min-width: 992px) {
+		width: 960px;
+	}
+
+	@media screen and (min-width: 1200px) {
 		max-width: 1140px;
 	}
 `;
