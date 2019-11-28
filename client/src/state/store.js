@@ -7,5 +7,4 @@ const reducersRoot = combineReducers({
     windowWidthReducer
 });
 
-const store = createStore(reducersRoot);
-export default store;
+export default createStore(reducersRoot);
