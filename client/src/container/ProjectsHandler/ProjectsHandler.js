@@ -22,19 +22,11 @@ function ProjectsHandler (props) {
         })()
     }, []);
 
-    return (
-        <main style={{gridColumn: "1 / 2", gridRow: "1 / -1"}}>
-            {
-                (function () {
-                    if (!state.dataFetched) return <SCLoader/>
+    if (!state.dataFetched) return <SCLoader/>;
 
-                    if (props.windowWidth <= 570) return state.data.map((project, index) => <Project projectData={project} key={index}/>);
+    if (props.windowWidth <= 570) return state.data.map((project, index) => <Project projectData={project} key={index} />)
 
-                    return <SliderCompo projectData={state.data}/>
-                })()
-            }
-        </main>
-    );
+    return <SliderCompo projectData={state.data}/>
 }
 
 function mapState ({windowWidthReducer}) {
