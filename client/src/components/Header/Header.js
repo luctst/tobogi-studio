@@ -19,7 +19,10 @@ function Header (props) {
         });
     }, []);
 
-    const handleClick = () => props.dispatch({type: "SHOW_SIDEBAR", payload: !props.showSidebar});
+    const handleClick = e => {
+        e.stopPropagation();
+        props.dispatch({ type: "SHOW_SIDEBAR", payload: !props.showSidebar })
+    };
 
     return (
         <HeaderSC as="header" windowWidth={props.windowWidth} sidebarIsTrue={props.showSidebar}>
