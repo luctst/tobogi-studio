@@ -2,7 +2,8 @@ import styled from "styled-components";
 import Container from "./../../styles/Container";
 
 const SCSlider = styled(Container)`
-    position: relative;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
 
     img {
         position: absolute;
@@ -10,16 +11,22 @@ const SCSlider = styled(Container)`
 
     .slick-slide {
         div {
-            align-items: flex-end;
             height: 90vh;
+            align-items: flex-end;
             display: flex;
 
-            .see-more {
+            button {
                 margin-left: auto;
                 margin-right: 20px; 
             }
         }
     }
+
+    .slick-active {
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 `;
 
 export default SCSlider;
