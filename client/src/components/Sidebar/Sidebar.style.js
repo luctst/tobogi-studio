@@ -4,7 +4,6 @@ const SidebarSC = styled.div`
     background-color: #ebebeb;
     height: 100vh;
     max-height: 100vh;
-
     ${props => {
         if (props.windowWidth <= 560) {
             return `
