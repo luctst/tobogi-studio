@@ -1,6 +1,5 @@
 import React from 'react';
 import HeaderSC from './Header.style';
-import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 function Header (props) {
@@ -25,21 +24,22 @@ function Header (props) {
     };
 
     return (
-        <HeaderSC as="header" windowWidth={props.windowWidth} sidebarIsTrue={props.showSidebar}>
+        <HeaderSC>
             <h1>MODAL</h1>
-            <nav>
-                <ul>
-                    <li onClick={handleClick}><NavLink to="">INFO</NavLink></li>
-                    {
-                        props.windowWidth >= 700 ?
-                            <>
-                                <li className="is__link__middle"><NavLink to="">MAIL</NavLink></li>
-                                <li><NavLink to="">INSTAGRAM</NavLink></li>
-                            </>
-                        : null
-                    }
-                </ul>
-            </nav>
+            {
+                !props.showSidebar &&
+                <nav>
+                    <ul>
+                        <li>
+                            {
+                                props.windowWidth >= 700 && 
+                                    <a href="https://www.instagram.com/modal_studio" target="_blank">INSTAGRAM</a>
+                            }
+                        </li>
+                        <button onClick={handleClick}>INFO</button>
+                    </ul>
+                </nav>
+            }
         </HeaderSC>
     );
 }
