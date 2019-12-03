@@ -12,7 +12,7 @@ function SidebarHandler (props) {
         if (window.innerWidth >= 560) mainRoot.style = "display: grid;grid-template-columns: 2.5fr 1fr;";
 
         createModal.id = "modal";
-        createModal.style = "grid-column: 2 / 3; grid-row: 1 / -1";
+        createModal.style = "z-index: 10;"
         mainRoot.appendChild(createModal);
 
         return ReactDOM.createPortal(
