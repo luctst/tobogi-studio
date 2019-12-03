@@ -1,14 +1,16 @@
 import styled from 'styled-components';
-import Container from './../../styles/Container';
 import helper from './../../styles/helper';
 
-const HeaderSC = styled(Container)`
+const HeaderSC = styled.header`
     align-items: center;
+    box-sizing: border-box;
     display: flex;
+    grid-column: 1 / 2;
     height: 10vh;
+    padding: 30px 40px;
+    position: fixed;
     justify-content: space-between;
-    ${props => (props.windowWidth >= 560 && props.sidebarIsTrue) && "margin: 0"}
-    ${props => props.sidebarIsTrue && "grid-column: 1 / 2; grid-row: 1 / 1;"}
+    width: 100vw;
     
     h1 {
         font-weight: 900;
@@ -24,15 +26,25 @@ const HeaderSC = styled(Container)`
             margin: 0;
             padding-left: 0;
 
-            .is__link__middle {
-                margin: 0 2em;
-            }
-
             li {
                 a {
-                    text-decoration: none;
                     color: ${helper.mainColor};
                     font-size: 15px;
+                    text-decoration: none;
+                    margin: 0 2em;
+                }
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                color: ${helper.mainColor};
+                font-size: 15px;
+                text-decoration: none;
+                padding: 0;
+
+                &:hover {
+                    cursor: pointer;
                 }
             }
         }
