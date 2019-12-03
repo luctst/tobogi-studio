@@ -8,25 +8,6 @@ const SCSlider = styled(Container)`
     img {
         position: absolute;
     }
-
-    .slick-slide {
-        div {
-            height: 90vh;
-            align-items: flex-end;
-            display: flex;
-
-            button {
-                margin-left: auto;
-                margin-right: 20px; 
-            }
-        }
-    }
-
-    .slick-active {
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
 `;
 
 export default SCSlider;
