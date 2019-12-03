@@ -15,8 +15,17 @@ function SidebarHandler (props) {
     return (
         <SidebarSC windowWidth={props.windowWidth}>
             <header>
-                {props.windowWidth <= 450 && <h1>TOBOGI</h1>}
-                <span onClick={handleClick}>X</span>
+                {
+                    props.windowWidth <= 450 ?
+                        <>
+                            <h1>TOBOGI</h1>
+                            <span onClick={handleClick}>X</span>
+                        </> 
+                    : <>
+                        <a href="https://www.instagram.com/modal_studio" target="_blank">INSTAGRAM</a>
+                        <button onClick={handleClick}>CLOSE</button>
+                      </>
+                }
             </header>
         </SidebarSC>
     );
