@@ -8,6 +8,44 @@ const SCSlider = styled(Container)`
     img {
         position: absolute;
     }
+
+    .slide-perso {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        position: sticky;
+
+        img {
+            position: sticky;
+        }
+
+        footer {
+            display: flex;
+
+            button {
+                margin-left: auto;
+            }
+        }
+    }
+
+    .btn-next,
+    .btn-prev {
+        position: absolute;
+        top: 0;
+        height: 100vh;
+        background: transparent;
+        border: none;
+        width: 50%;
+    }
+
+    .btn-prev {
+        left: 0;
+    }
+
+    .btn-next {
+        right: 0;
+    }
 `;
 
 export default SCSlider;
