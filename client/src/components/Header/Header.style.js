@@ -11,7 +11,7 @@ const HeaderSC = styled.header`
     position: fixed;
     justify-content: space-between;
     width: 100vw;
-    z-index: 11;
+    z-index: 40;
     
     h1 {
         font-weight: 900;
