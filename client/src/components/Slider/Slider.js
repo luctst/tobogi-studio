@@ -46,8 +46,8 @@ function SliderCompo (props) {
                     {
                         props.projectData.map((project, index) => {
                             return (
-                                <Slide index={index} innerClassName="slide-perso">
-                                    <img src={`http://localhost:1337${project.caption[0].url}`} alt="Image"/>
+                                <Slide index={index} innerClassName="slide-perso" key={index}>
+                                    <img src={`http://localhost:1337${project.caption[0].url}`} alt={project.caption[0].name}/>
                                     <footer>
                                         <p>{project.name} - {project.description}</p>
                                         <button>VOIR PLUS</button>
