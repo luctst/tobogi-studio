@@ -37,6 +37,7 @@ const SCSlider = styled(Container)`
         background: transparent;
         border: none;
         width: 50%;
+        z-index: 30;
     }
 
     .btn-prev {
