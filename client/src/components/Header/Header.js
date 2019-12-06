@@ -4,16 +4,13 @@ import {connect} from 'react-redux';
 
 function Header (props) {
     React.useEffect(() => {
-        window.addEventListener("resize", () => {
+        window.addEventListener("resize", e => {
             // TODO: Create an algo who only dispatch when necessary.
-            props.dispatch({
-                type: "UPDATE_WINDOW_WIDTH"
-            });
-            // if (windowWidth >= 700 && e.target.innerWidth >= 700) return null;
-            // if (windowWidth <= 700 && e.target.innerWidth <= 700) return null;
+            if (props.windowWidth >= 700 && e.target.innerWidth >= 700) return null;
+            if (props.windowWidth <= 700 && e.target.innerWidth <= 700) return null;
 
-            // if (windowWidth >= 700 && e.target.innerWidth <= 700) setWindowWidth(e.target.innerWidth);
-            // if (windowWidth <= 700 && e.target.innerWidth >= 700) setWindowWidth(e.target.innerWidth);
+            if (props.windowWidth >= 700 && e.target.innerWidth <= 700) return props.dispatch({type: "UPDATE_WINDOW_WIDTH"});
+            if (props.windowWidth <= 700 && e.target.innerWidth >= 700) return props.dispatch({ type: "UPDATE_WINDOW_WIDTH" });
 
         });
     }, []);
