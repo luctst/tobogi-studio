@@ -18,7 +18,7 @@ function SidebarHandler (props) {
                 {
                     props.windowWidth <= 450 ?
                         <>
-                            <h1>TOBOGI</h1>
+                            <h1>MODAL</h1>
                             <span onClick={handleClick}>X</span>
                         </> 
                     : <>
