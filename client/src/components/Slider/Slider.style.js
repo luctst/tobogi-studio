@@ -9,15 +9,23 @@ const SCSlider = styled(Container)`
         position: absolute;
     }
 
+    .container--slider {
+        width: 70vw;
+        padding-top: 12%;
+        position: static;
+    }
+
     .slide-perso {
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        // height: 100vh;
         justify-content: center;
         position: sticky;
 
         img {
             position: sticky;
+            height: 70vh;
+            width: 70vw;
         }
 
         footer {

@@ -5,7 +5,7 @@ const Container = styled.section`
 	color: ${helper.mainColor};
 	font-family: 'Roboto', Arial, Helvetica, sans-serif;
     padding:0 15px;
-    margin:0 auto;
+		margin:0 auto;
 
 	@media screen and (max-width: 576px) {
 		width: 100%;
